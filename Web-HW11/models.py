@@ -16,6 +16,9 @@ class Contacts(Base):
     phone_number = Column(Integer)
     born_date = Column(Integer)
     another_info = Column(String, default=None)
+    user_id = Column('user_id', ForeignKey('users.id', ondelete='CASCADE'), default=None)
+    user = relationship('User', backref="tags")
+
 
 
 
